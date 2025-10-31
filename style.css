@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url('https://cdn.magicdecor.in/com/2023/12/04150518/Spider-Man-Web-Pattern-Wallpaper-for-Boys.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+header {
+  color: gold;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #00065a;
+  color: gold;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+button:hover {
+  background-color: #2c2c2c;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #00065a;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.back {
+  background: goldenrod;
+}
+.spiderright img {
+  width: 300px;
+  float: right;
+}
+.spiderleft img {
+  width: 300px;
+  float: left;
+}
+
+@media (max-width: 500px) {
+
+  .spiderleft img,
+  .spiderright img {
+    width: 50px; 
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 40px);
+    grid-gap: 5px;
+  }
+
+  .card {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 250px) {
+  .spiderleft img,
+  .spiderright img {
+    width: 35px; 
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 30px);
+    grid-gap: 3px;
+  }
+
+  .card {
+    width: 30px;
+    height: 30px;
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+
+  .spiderleft img,
+  .spiderright img {
+    width: 120px;  
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 80px); 
+    grid-gap: 10px;
+    width: calc(4 * 80px + 3 * 10px); 
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+    font-size: 1.2em;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+}
